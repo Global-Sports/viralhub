@@ -1,0 +1,84 @@
+<style>
+.video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+
+  /* YOUR BACKGROUND IMAGE */
+  background-image: url("https://ic-vt-nss.xhcdn.com/a/ZWJhZjVmN2Q4NTlmMzRkNDYyZWMzNGNiNTU3NTgxOWU/s(w:1280,h:720),webp/028/628/739/1280x720.17694429.jpg");
+
+  background-size: cover;
+  background-position: center;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.5),
+    0 0 60px rgba(124,58,237,0.2);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Dark overlay over image */
+.video-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Play button area */
+.video-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.play-button {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+
+  transition: 0.3s ease;
+}
+
+.video-card:hover .play-button {
+  transform: scale(1.12);
+}
+
+.play-icon {
+  width: 0;
+  height: 0;
+
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  border-left: 22px solid #6d28d9;
+
+  margin-left: 6px;
+}
+
+.watch-text {
+  margin-top: 18px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+</style>
