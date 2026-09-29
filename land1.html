@@ -1,84 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video Landing Page</title>
+
 <style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    background: #080b18;
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* VIDEO FRAME */
 .video-card {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 24px;
-  overflow: hidden;
-  cursor: pointer;
+    position: relative;
 
-  /* YOUR BACKGROUND IMAGE */
-  background-image: url("cov/cover1.png");
+    width: 100%;
+    max-width: 900px;
 
-  background-size: cover;
-  background-position: center;
+    aspect-ratio: 16 / 9;
 
-  border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 24px;
 
-  box-shadow:
-    0 30px 80px rgba(0,0,0,0.5),
-    0 0 60px rgba(124,58,237,0.2);
+    overflow: hidden;
 
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+
+    /* IMAGE */
+    background-image: url("./cov/cover1.png");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    border: 2px solid rgba(255,255,255,0.2);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.7),
+        0 0 60px rgba(124,58,237,0.25);
+
+    transition: 0.3s ease;
 }
 
+/* HOVER */
 .video-card:hover {
-  transform: translateY(-6px) scale(1.01);
+    transform: scale(1.02);
 }
 
-/* Dark overlay over image */
+/* DARK OVERLAY */
 .video-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0,0,0,0.30);
+
+    z-index: 1;
 }
 
-/* Play button area */
+/* CONTENT */
 .video-content {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2;
 }
 
+/* PLAY BUTTON */
 .play-button {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: white;
+    width: 90px;
+    height: 90px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    border-radius: 50%;
 
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    background: #ffffff;
 
-  transition: 0.3s ease;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,0.6);
+
+    transition: 0.3s ease;
 }
 
 .video-card:hover .play-button {
-  transform: scale(1.12);
+    transform: scale(1.12);
 }
 
+/* PLAY ICON */
 .play-icon {
-  width: 0;
-  height: 0;
+    width: 0;
+    height: 0;
 
-  border-top: 14px solid transparent;
-  border-bottom: 14px solid transparent;
-  border-left: 22px solid #6d28d9;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 
-  margin-left: 6px;
+    border-left: 23px solid #6d28d9;
+
+    margin-left: 6px;
 }
 
+/* TEXT */
 .watch-text {
-  margin-top: 18px;
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
+    margin-top: 18px;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,0.8);
 }
+
 </style>
+</head>
+
+
+<body>
+
+
+<div class="video-card" onclick="openMainPage()">
+
+    <div class="video-content">
+
+        <div class="play-button">
+            <div class="play-icon"></div>
+        </div>
+
+        <div class="watch-text">
+            Click to Watch
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function openMainPage() {
+
+    window.open(
+        "https://example.com/",
+        "_blank"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>
